@@ -10,6 +10,7 @@ export const Home = () => {
     useEffect(() => {
         gameService.getAll()
             .then(gamesResult => {
+                console.log([gamesResult]);
                 setGames(gamesResult);
             })
     }, [])
@@ -27,13 +28,12 @@ export const Home = () => {
                 <div id="home-page">
 
                     <h1>Latest Games</h1>
-                    
-                    {/* Display div: with information about every game (if any) */}
-                    {games.map(x => <LatesGame game = {x} />)}
+                    {games.length > 0
+                        ? games.map(x => <LatesGame key={x._id} game={x} />)
+                        : <p className="no-articles">No games yet</p>
+                    }
 
 
-                    {/* Display paragraph: If there is no games  */}
-                    <p className="no-articles">No games yet</p>
                 </div>
             </section>
         </>

@@ -10,7 +10,7 @@ export const LatesGame = (
                 <div className="image-wrap">
                     <img src={game.imageUrl} alt='' />
                 </div>
-                <h3>{game.title} </h3>
+                <h3>{game.title}</h3>
                 <div className="rating">
                     <span>☆</span>
                     <span>☆</span>
